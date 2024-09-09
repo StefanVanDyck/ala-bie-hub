@@ -189,7 +189,7 @@ class ExternalSiteService implements GrailsConfigurationAware {
 
         var header = ["Accept-Language": wikipediaLang]
 
-        webClientService.get(url, false, header)
+        webClientService.get(url, true, header)
     }
 
 }
