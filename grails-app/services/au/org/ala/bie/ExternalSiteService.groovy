@@ -22,6 +22,7 @@ import grails.core.support.GrailsConfigurationAware
 import grails.plugin.cache.Cacheable
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
+import groovy.util.logging.Slf4j
 import org.grails.web.json.JSONObject
 import org.apache.tika.langdetect.optimaize.OptimaizeLangDetector
 import org.apache.tika.language.detect.LanguageDetector
@@ -35,6 +36,7 @@ import java.util.regex.Pattern
 /**
  * Get information from external sites
  */
+@Slf4j
 class ExternalSiteService implements GrailsConfigurationAware {
     /** Base URL of BHL web services */
     String bhlApiKey
@@ -185,11 +187,13 @@ class ExternalSiteService implements GrailsConfigurationAware {
             return ''
         }
 
+
         String url = wikipediaUrl +  URLEncoder.encode(name.replace(' ', '_'), 'UTF-8')
 
         var header = ["Accept-Language": wikipediaLang]
 
-        webClientService.get(url, true, header)
+        log.warn("Getting Wikipedia info {}", url)
+        return webClientService.get(url, true, header)
     }
 
 }
