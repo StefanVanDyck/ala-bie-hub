@@ -93,8 +93,8 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="well refine-box">
-                    <h2 class="hidden-xs"><g:message code="search.resultFine"/></h2>
-                    <h2 class="visible-xs"><a href="#refine-options" data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <g:message code="search.resultFine"/></a>
+                    <h2>
+                        <a href="#refine-options" data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <g:message code="search.resultFine"/></a>
                     </h2>
 
                     <div id="refine-options" class="collapse mobile-collapse">
