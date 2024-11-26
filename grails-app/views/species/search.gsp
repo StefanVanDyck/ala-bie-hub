@@ -278,7 +278,7 @@
                                         </a>
                                     </div>
                                 </g:if>
-                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage]}"/>:
+                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage, result.source]}"/>:
                                 <a class="commonNameSummary" href="${speciesPageLink}">${result.name}</a><%--
                                 --%><g:if test="${result.acceptedConceptName}">&nbsp;&ndash;&nbsp;<bie:formatSciName rankId="${result.rankID}" taxonomicStatus="accepted" name="${result.acceptedConceptName}"/></g:if><%--
                                 --%><g:if test="${result.favourite}"><span class="favourite favourite-${result.favourite}" title="<g:message code="favourite.${result.favourite}.detail"/>"><g:message code="favourite.${result.favourite}" encodeAs="raw"/></span></g:if>
