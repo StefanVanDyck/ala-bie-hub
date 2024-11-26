@@ -278,11 +278,17 @@
                                         </a>
                                     </div>
                                 </g:if>
-                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage, result.source]}"/>:
+                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage]}"/>:
                                 <a class="commonNameSummary" href="${speciesPageLink}">${result.name}</a><%--
                                 --%><g:if test="${result.acceptedConceptName}">&nbsp;&ndash;&nbsp;<bie:formatSciName rankId="${result.rankID}" taxonomicStatus="accepted" name="${result.acceptedConceptName}"/></g:if><%--
                                 --%><g:if test="${result.favourite}"><span class="favourite favourite-${result.favourite}" title="<g:message code="favourite.${result.favourite}.detail"/>"><g:message code="favourite.${result.favourite}" encodeAs="raw"/></span></g:if>
                                 </h3>
+                                <p>
+                                    <span><g:message code="idxtype.${result.idxtype}.source"/>: ${result.source}</span>
+                                </p>
+                                <p>
+                                    <span><g:message code="idxtype.${result.idxtype}.scientificName"/>: ${result.scientificName}</span>
+                                </p>
                             </g:elseif>
                             <g:elseif test="${result.has("idxtype") && result.idxtype == 'IDENTIFIER'}">
                                 <g:set var="speciesPageLink">${request.contextPath}/species/${result.linkIdentifier?:result.taxonGuid}</g:set>
