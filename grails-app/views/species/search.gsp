@@ -287,7 +287,7 @@
                                     <span><g:message code="idxtype.${result.idxtype}.source"/>: ${result.source}</span>
                                 </p>
                                 <p>
-                                    <span><g:message code="idxtype.${result.idxtype}.scientificName"/>: ${result.scientificName}</span>
+                                    <span><g:message code="idxtype.${result.idxtype}.scientificName"/>: ${result.taxonScientificName}</span>
                                 </p>
                             </g:elseif>
                             <g:elseif test="${result.has("idxtype") && result.idxtype == 'IDENTIFIER'}">
