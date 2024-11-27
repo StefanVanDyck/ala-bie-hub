@@ -510,7 +510,7 @@ function showWikipediaData(data, testPage, targetName) {
 
             // identify the title
             var title
-            if (item.childNodes[0].tagName.match(/H[0-9]/)) {
+            if (item.childNodes[0].tagName && item.childNodes[0].tagName.match(/H[0-9]/)) {
                 title = item.childNodes[0].innerHTML
                 item.removeChild(item.childNodes[0])
             } else {

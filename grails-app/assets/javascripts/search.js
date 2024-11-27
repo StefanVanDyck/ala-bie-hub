@@ -18,6 +18,9 @@
  * Time: 11:17 AM
  * To change this template use File | Settings | File Templates.
  */
+
+//= require jquery.sortElemets.js
+
 $(document).ready(function() {
     // set the search input to the current q param value
     var query = SEARCH_CONF.query;
