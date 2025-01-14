@@ -465,7 +465,8 @@
         ausTraitsHomeUrl: "${grailsApplication.config.ausTraits.homeURL}",
         ausTraitsSourceUrl:"${grailsApplication.config.ausTraits.sourceURL}",
         showHiddenImages: false,
-        imageFilter: "${raw(grailsApplication.config.imageFilter)}"
+        imageFilter: "${raw(grailsApplication.config.imageFilter)}",
+        wikipediaWebportalUrl: "${grailsApplication.config.wikipedia.webportalUrl}"
     };
 
     $(function(){

@@ -537,7 +537,7 @@ function showWikipediaData(data, testPage, targetName) {
             }
 
             // fix relative links
-            $description.find(".content").html(item.innerHTML.replaceAll('href="./', "href=\"" + "https://wikipedia.org/wiki/"))
+            $description.find(".content").html(item.innerHTML.replaceAll('href="./', "href=\"" + SHOW_CONF.wikipediaWebportalUrl) + "\"")
 
             // show this description
             $description.css({'display': 'block'});
