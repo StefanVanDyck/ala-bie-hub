@@ -93,8 +93,8 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="well refine-box">
-                    <h2 class="hidden-xs"><g:message code="search.resultFine"/></h2>
-                    <h2 class="visible-xs"><a href="#refine-options" data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <g:message code="search.resultFine"/></a>
+                    <h2>
+                        <a href="#refine-options" data-toggle="collapse"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <g:message code="search.resultFine"/></a>
                     </h2>
 
                     <div id="refine-options" class="collapse mobile-collapse">
@@ -278,11 +278,14 @@
                                         </a>
                                     </div>
                                 </g:if>
-                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage, result.source]}"/>:
-                                <a class="commonNameSummary" href="${speciesPageLink}">${result.name}</a><%--
+                                <h3><g:message code="idxtype.${result.idxtype}.formatted" default="${result.idxtype}" args="${[commonNameLanguage]}"/>:
+                                <a class="commonNameSummary" href="${speciesPageLink}">${result.name} (${result.taxonScientificName})</a><%--
                                 --%><g:if test="${result.acceptedConceptName}">&nbsp;&ndash;&nbsp;<bie:formatSciName rankId="${result.rankID}" taxonomicStatus="accepted" name="${result.acceptedConceptName}"/></g:if><%--
                                 --%><g:if test="${result.favourite}"><span class="favourite favourite-${result.favourite}" title="<g:message code="favourite.${result.favourite}.detail"/>"><g:message code="favourite.${result.favourite}" encodeAs="raw"/></span></g:if>
                                 </h3>
+                                <p>
+                                    <span><g:message code="idxtype.${result.idxtype}.source"/>: ${result.source}</span>
+                                </p>
                             </g:elseif>
                             <g:elseif test="${result.has("idxtype") && result.idxtype == 'IDENTIFIER'}">
                                 <g:set var="speciesPageLink">${request.contextPath}/species/${result.linkIdentifier?:result.taxonGuid}</g:set>
